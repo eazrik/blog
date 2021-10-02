@@ -1,7 +1,15 @@
-<!doctype html>
+<x-layout>
+    @foreach ($posts as $post)
+        <article>
+            <h1>
+                <a href="/posts/{{ $post->id }}">
+                    {{ $post->title }}
+                </a>
+            </h1>
 
-<title>My Posts</title>
-
-<body>
-    <h1>Hello World</h1>
-</body>
+            <div>
+                {{ $post->excerpt }}
+            </div>
+        </article>
+    @endforeach
+</x-layout>
